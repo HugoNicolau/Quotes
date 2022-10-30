@@ -1,26 +1,6 @@
-// import logo from './logo.svg';
 import './App.css';
+import styled from "styled-components"
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 
@@ -37,12 +17,32 @@ function App() {
   }, [])
 
   return (
-    <>
-      <p><strong>Autor:</strong> {author}</p>
-      <p><strong>Frase:</strong> <i>{quote}</i></p>
-    </>
+    <MainContainer>
+      <p><strong>Author:</strong> {author}</p>
+      <p><strong>Quote:</strong> <i>{quote}</i></p>
+    </MainContainer>
   )
 }
+
+const MainContainer = styled.div`
+width:100vw;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items: center;
+flex-direction:column-reverse;
+background-color: #0F0F0F;
+
+p{
+  font-size:25px;
+  font-style:italic;
+  color:#ffffff;
+}
+strong{
+  color:yellow;
+}
+`
+
 
 
 export default App;
